@@ -1715,9 +1715,9 @@ function _p9k_vcs_render() {
     "$VCS_STATUS_STASHES"
     "$VCS_STATUS_TAG"
   )
-  if [[ $POWERLEVEL9K_SHOW_CHANGESET == true || -z $VCS_STATUS_LOCAL_BRANCH ]]; then
-    cache_key+=$VCS_STATUS_COMMIT
-  fi
+  #if [[ $POWERLEVEL9K_SHOW_CHANGESET == true || -z $VCS_STATUS_LOCAL_BRANCH ]]; then
+  #  cache_key+=$VCS_STATUS_COMMIT
+  #fi
 
   if ! _p9k_cache_get "${(@)cache_key}"; then
     local state=CLEAN
@@ -1763,7 +1763,7 @@ function _p9k_vcs_render() {
     local ws
     if [[ $POWERLEVEL9K_SHOW_CHANGESET == true || -z $VCS_STATUS_LOCAL_BRANCH ]]; then
       _p9k_get_icon VCS_COMMIT_ICON
-      _$0_fmt COMMIT "$_P9K_RETVAL${${VCS_STATUS_COMMIT:0:$POWERLEVEL9K_VCS_INTERNAL_HASH_LENGTH}:-HEAD}"
+      #_$0_fmt COMMIT "$_P9K_RETVAL${${VCS_STATUS_COMMIT:0:$POWERLEVEL9K_VCS_INTERNAL_HASH_LENGTH}:-HEAD}"
       ws=' '
     fi
 
